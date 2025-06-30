@@ -1,0 +1,39 @@
+theme = "onedark"
+
+[editor]
+true-color = true
+line-number = "relative"
+bufferline = "multiple"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+character = "|" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
+center = ["version-control"]
+right = ["diagnostics", "selections", "register", "position", "file-encoding"]
+
+[editor.soft-wrap]
+enable = true
+wrap-indicator = ""
+
+[editor.cursor-shape]
+insert = "bar"
+
+[keys.normal]
+C-b = ":bc"
+
+[keys.insert]
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"
