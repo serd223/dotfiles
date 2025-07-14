@@ -1,4 +1,6 @@
-export LIBGL_ALWAYS_INDIRECT=1
+# export PATH="$PATH:/opt/fasm/"
+export PATH="$HOME/.ghcup/bin/:$PATH"
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export EDITOR="hx"
 export GPG_TTY=$(tty)
 export COLORTERM="truecolor"
@@ -67,3 +69,6 @@ if ! shopt -oq posix; then
 fi
 . "$HOME/.cargo/env"
 
+# For WSL2: Sets DISPLAY tp host IP
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+export LIBGL_ALWAYS_INDIRECT=1
