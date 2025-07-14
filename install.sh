@@ -7,7 +7,7 @@ cp ./helix/config.toml ~/.config/helix/
 cp ./helix/languages.toml ~/.config/helix/
 
 mkdir -p ~/.config/walked/
-cp ./walked/walked_conf.toml ~/.config/walked/
+cp ./walked/walked.toml ~/.config/walked/
 
 cp ./tmux/.tmux.conf ~/
 
