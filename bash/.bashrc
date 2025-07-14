@@ -47,6 +47,12 @@ section() {
   apropos -s $1 -w '*' | less
 }
 
+# Hack because my cursor gets stuck as a block shape after I exit helix
+_hx() {
+  /usr/bin/hx "$@"
+  printf '\033[5 q'
+}
+
 if [ -f /etc/profile.d/bash_completion.sh ]; then
     . /etc/profile.d/bash_completion.sh
 fi
