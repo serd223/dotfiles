@@ -11,6 +11,7 @@ cp ./walked/walked_conf.toml ~/.config/walked/
 
 cp ./tmux/.tmux.conf ~/
 
+mkdir -p ~/.config/fastfetch/
 cp ./fastfetch/config.jsonc ~/.config/fastfetch/
 
 echo "To apply changes, run:"
