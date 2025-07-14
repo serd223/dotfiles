@@ -5,10 +5,7 @@ export EDITOR="hx"
 export GPG_TTY=$(tty)
 export COLORTERM="truecolor"
 
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+[[ $- != *i* ]] && return
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -25,11 +22,6 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
 function git_branch() {
     if [ -d .git ] ; then
         printf "%s" "($(git branch 2> /dev/null | awk '/\*/{print $2}'))";
@@ -45,7 +37,7 @@ pur='\[\033[01;35m\]'   # Purple
 cyn='\[\033[01;36m\]'   # Cyan
 wht='\[\033[01;37m\]'   # White
 clr='\[\033[00m\]'      # Reset
-PS1='${debian_chroot:+($debian_chroot)}'${grn}'\u '${pur}'\w '${blu}'$(git_branch)'${grn}'\n\$ '${clr}
+PS1=${grn}'\u '${pur}'\w '${blu}'$(git_branch)'${grn}'\n\$ '${clr}
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -55,7 +47,9 @@ section() {
   apropos -s $1 -w '*' | less
 }
 
-source /etc/profile.d/bash_completion.sh
+if [ -f /etc/profile.d/bash_completion.sh ]; then
+    . /etc/profile.d/bash_completion.sh
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -67,7 +61,10 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-. "$HOME/.cargo/env"
+
+if [ -f ~/.cargo/env ]; then
+    . "$HOME/.cargo/env"
+fi
 
 # For WSL2: Sets DISPLAY tp host IP
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
