@@ -11,6 +11,8 @@ cp ./walked/walked_conf.toml ~/.config/walked/
 
 cp ./tmux/.tmux.conf ~/
 
+cp ./fastfetch/config.jsonc ~/.config/fastfetch/
+
 echo "To apply changes, run:"
 echo "    source ~/.bashrc"
 echo "    tmux source-file ~/.tmux.conf (if inside tmux session)"
