@@ -1,4 +1,6 @@
 #!/bin/bash
+cd ~/dotfiles
+
 cp ./bash/.bash_aliases ~/
 cp ./bash/.bashrc ~/
 
