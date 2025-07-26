@@ -2,4 +2,5 @@ show_entry_number = false
 directory_text = " "
 file_text = " "
 other_text = "??"
-new_directory = "C-m"
+new_directory = "C-b"
+remove = "C-c"
