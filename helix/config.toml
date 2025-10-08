@@ -28,6 +28,10 @@ insert = "bar"
 [keys.normal]
 C-b = ":bc"
 
+[keys.normal.space]
+t = "@bc<S-lt><space><esc>h<S-R>li<S-gt><ret><S-lt>/<space><esc>h<S-R>li<S-gt><esc>kglli<ret>"
+T = "@bc<S-lt><space><esc>h<S-R>li<S-gt><S-lt>/<space><esc>h<S-R>li<S-gt><esc>F<S-lt>i"
+
 [keys.insert]
 up = "no_op"
 down = "no_op"
