@@ -1,0 +1,16 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/one_dark.toml"
+]
+[window]
+opacity = 0.75
+blur = true
+startup_mode = "Maximized"
+title = "Terminal"
+dynamic_title = false
+
+[font]
+size = 18
+
+[cursor]
+style = { shape = "Beam", blinking = "Off"}
