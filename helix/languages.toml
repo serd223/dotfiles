@@ -1,3 +1,21 @@
+[language-server.basedpyright]
+command = "basedpyright-langserver"
+args = ["--stdio"]
+
+[[language]]
+name = "python"
+indent = { tab-width = 4, unit = "    " }
+language-servers = [
+  {name = "ruff", except-features = ["hover"]},
+  "basedpyright"
+]
+auto-format = true
+
+[language-server.basedpyright.config.python.analysis]
+typeCheckingMode = "standard"
+autoImportCompletions = true
+diagnosticMode = "workspace"
+
 [[language]]
 name = "haskell"
 indent = { tab-width = 4, unit = "    " }
