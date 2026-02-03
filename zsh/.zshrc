@@ -20,7 +20,7 @@ PROMPT='%F{green}%n %F{magenta}%~ %F{blue}$(git_branch)%f
 
 # Hack because my cursor gets stuck as a block shape after I exit helix
 _hx() {
-  /opt/homebrew/bin/hx "$@"
+  $(brew --prefix)/bin/hx "$@"
   printf '\033[5 q'
 }
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
