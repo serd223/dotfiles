@@ -45,3 +45,11 @@ mkdir -p ./bak/tmux/
 cp ~/.tmux.conf ./bak/tmux/
 cp ./tmux/.tmux.conf ~/
 # /tmux
+
+# fastfetch
+mkdir -p ~/.config/fastfetch/
+mkdir -p ./bak/fastfetch/
+
+cp ~/.config/fastfetch/config.jsonc ./bak/fastfetch/
+cp ./fastfetch/config.jsonc ~/.config/fastfetch/
+# /fastfetch
