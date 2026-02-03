@@ -42,6 +42,6 @@ cp ./tmux/.tmux.conf ~/
 mkdir -p ~/.config/fastfetch/
 mkdir -p ./bak/fastfetch/
 
-cp ~/.config/fastfetch/config/jsonc ./bak/fastfetch/
+cp ~/.config/fastfetch/config.jsonc ./bak/fastfetch/
 cp ./fastfetch/config.jsonc ~/.config/fastfetch/
 # /fastfetch
