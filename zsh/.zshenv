@@ -12,6 +12,12 @@ export EDITOR="hx"
 # Make sure TERM supports colors
 export TERM=${TERM:-xterm-256color}
 
+# Configure zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,bold"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_HISTORY_IGNORE="git clone *"
+ZSH_AUTOSUGGEST_COMPLETION_IGNORE="git clone *"
+
 # Aliases
 alias hx="_hx" # defined in .zshrc
 alias lg='lazygit'

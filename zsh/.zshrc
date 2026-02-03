@@ -23,4 +23,5 @@ _hx() {
   /opt/homebrew/bin/hx "$@"
   printf '\033[5 q'
 }
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 rc
