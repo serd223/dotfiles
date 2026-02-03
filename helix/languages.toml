@@ -9,7 +9,9 @@ language-servers = [
   {name = "ruff", except-features = ["hover"]},
   "basedpyright"
 ]
-auto-format = true
+# I find the python formatters a bit too strict and opinionated
+# so I prefer formatting selections with '=' when needed
+auto-format = false
 
 [language-server.basedpyright.config.python.analysis]
 typeCheckingMode = "standard"
