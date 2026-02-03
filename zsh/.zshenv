@@ -8,6 +8,7 @@ export LC_RPATH="/usr/local/lib/"
 
 # Editor
 export EDITOR="hx"
+export KEYTIMEOUT=10
 
 # Make sure TERM supports colors
 export TERM=${TERM:-xterm-256color}
@@ -32,6 +33,7 @@ export ALIAS_LSC="yes"
 # Configure zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,bold"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=45
 ZSH_AUTOSUGGEST_HISTORY_IGNORE="git clone *"
 ZSH_AUTOSUGGEST_COMPLETION_IGNORE="git clone *"
 

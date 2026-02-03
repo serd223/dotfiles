@@ -52,5 +52,6 @@ _hx() {
   $(brew --prefix)/bin/hx "$@"
   printf '\033[5 q'
 }
+autoload -U compinit && compinit
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 rc
