@@ -26,6 +26,9 @@ export CLI_COLOR=1
 # x:  Backgrounds -> None (Transparent/Default)
 export LSCOLORS="ExFxcxdxBxDxDxCxGxexex"
 
+# Alias the custom extra colored `lsc` function to `ls`
+export ALIAS_LSC="yes"
+
 # Configure zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,bold"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
