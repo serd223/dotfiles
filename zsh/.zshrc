@@ -52,6 +52,15 @@ _hx() {
   $(brew --prefix)/bin/hx "$@"
   printf '\033[5 q'
 }
+
+# add extra completion data stored in ~/.zfunc
+fpath+=~/.zfunc
+
+# make sure compinit is called
 autoload -U compinit && compinit
+
+# source zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# reset cursor to bar
 rc
