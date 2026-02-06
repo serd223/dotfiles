@@ -64,9 +64,18 @@ if [[ "$ALIAS_LSC" == "yes" ]]; then
   alias ls="lsc"
 fi
 
+# Cache brew prefix
+__BREW_PREFIX=$(brew --prefix)
+
+# Alias watch utility
+_watch() {
+  $__BREW_PREFIX/bin/watch -c -t -x env RC_ON_LOGIN="no" zsh -lic -b "$@"
+}
+alias watch="_watch"
+
 # Hack because my cursor gets stuck as a block shape after I exit helix
 _hx() {
-  $(brew --prefix)/bin/hx "$@"
+  $__BREW_PREFIX/bin/hx "$@"
   printf '\033[5 q'
 }
 alias hx="_hx"
@@ -85,7 +94,7 @@ fpath+=~/.zfunc
 autoload -U compinit && compinit
 
 # source zsh-autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $__BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # reset cursor to bar
 rc
