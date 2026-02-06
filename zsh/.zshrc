@@ -96,5 +96,7 @@ autoload -U compinit && compinit
 # source zsh-autosuggestions
 source $__BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# reset cursor to bar
-rc
+# reset cursor to bar unless instructed otherwise
+if [[ "$RC_ON_LOGIN" != "no" ]]; then
+  rc
+fi
