@@ -56,11 +56,8 @@ lsc() {
   done
 }
 
-# Alias the custom extra colored `lsc` function to `ls`
-export ALIAS_LSC="yes"
-
 # if the overhead becomes a problem for some reason, add toggle for aliasing
-if [[ "$ALIAS_LSC" == "yes" ]]; then
+if [[ "$ALIAS_LSC" != "no" ]]; then
   alias ls="lsc"
 fi
 
