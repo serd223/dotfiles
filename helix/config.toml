@@ -16,7 +16,7 @@ skip-levels = 1
 [editor.statusline]
 left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
 center = ["version-control"]
-right = ["diagnostics", "selections", "register", "position", "file-encoding"]
+right = ["diagnostics", "file-type", "selections","register", "position", "file-encoding"]
 
 [editor.soft-wrap]
 enable = true
