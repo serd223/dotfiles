@@ -77,6 +77,8 @@ _hx() {
 }
 alias hx="_hx"
 
+alias pydev="source ~/Programming/Python/dev/.venv/bin/activate"
+
 # Configure zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,bold"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
