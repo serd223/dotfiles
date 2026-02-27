@@ -2,6 +2,10 @@
 command = "basedpyright-langserver"
 args = ["--stdio"]
 
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
 [[language]]
 name = "python"
 indent = { tab-width = 4, unit = "    " }
