@@ -1,11 +1,3 @@
-[language-server.basedpyright]
-command = "basedpyright-langserver"
-args = ["--stdio"]
-
-[language-server.ruff]
-command = "ruff"
-args = ["server"]
-
 [[language]]
 name = "python"
 indent = { tab-width = 4, unit = "    " }
@@ -13,11 +5,21 @@ language-servers = [
   {name = "ruff", except-features = ["hover"]},
   "basedpyright"
 ]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[language-server.basedpyright]
+command = "basedpyright-langserver"
+args = ["--stdio"]
 # I find the python formatters a bit too strict and opinionated
 # so I prefer formatting selections with '=' when needed
 auto-format = false
 
 [language-server.basedpyright.config.python.analysis]
+# Disable specific diagnostics that Ruff already handles
+diagnosticSeverityOverrides = { reportUnusedImport = "none", reportUnusedVariable = "none", reportDuplicateImport = "none" }
 typeCheckingMode = "standard"
 autoImportCompletions = true
 diagnosticMode = "workspace"
