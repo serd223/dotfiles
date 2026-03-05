@@ -14,3 +14,9 @@ The install scripts copy your existing configs to `~/dotfiles/bak/` before chang
 
 ## Portability
 Some files (notably [tmux.conf](./tmux/.tmux.conf)) contain some platform-dependent configs but they should auto-detect the platform and do stuff according to that (`.tmux.conf` uses `uname` to detect the platform, for instance).
+
+## About Brewfile
+There is a [`Brewfile`](./homebrew/Brewfile) in the repository for my macos setup, it isn't referenced by [`install_macos.sh`](./install_macos.sh) since it is only really useful for a brand new environment. It can be used with:
+```console
+  $ brew bundle --file=~/dotfiles/Brewfile
+```
