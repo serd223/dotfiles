@@ -35,6 +35,12 @@ t = [
   ":n",
   "paste_after"
 ]
+T = [
+  ":insert-output \"grep -r %sh{pwd} --exclude-dir=.git -e 'TODO' -Hn || echo 'No TODOs found'\"",
+  "delete_selection",
+  ":n",
+  "paste_after"
+]
 
 [keys.insert]
 C-t = "@<esc>bc<S-lt><space><esc>h<S-R>li<S-gt><ret><S-lt>/<space><esc>h<S-R>li<S-gt><esc>kglli<ret>"
