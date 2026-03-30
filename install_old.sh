@@ -1,16 +1,16 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 cd ~/dotfiles
 mkdir -p ./bak/
 
-# zsh
-mkdir -p ./bak/zsh/
+# bash
+mkdir -p ./bak/bash/
 
-cp ~/.zshenv ./bak/zsh/
-cp ./zsh/linux/.zshenv ~/
+cp ~/.bash_aliases ./bak/bash/
+cp ./bash/.bash_aliases ~/
 
-cp ~/.zshrc ./bak/zsh/
-cp ./zsh/linux/.zshrc ~/
-# /zsh
+cp ~/.bashrc ./bak/bash/
+cp ./bash/.bashrc ~/
+# /bash
 
 # helix
 mkdir -p ~/.config/helix/
@@ -30,14 +30,6 @@ mkdir -p ./bak/walked/
 cp ~/.config/walked/walked.toml ./bak/walked/
 cp ./walked/walked.toml ~/.config/walked/
 # /walked
-
-# kitty
-mkdir -p ~/.config/kitty/
-mkdir -p ./bak/kitty/
-
-cp ~/.config/kitty/kitty.conf ./bak/kitty/
-cp ./kitty/kitty.conf ~/.config/kitty/
-# /kitty
 
 # tmux
 mkdir -p ./bak/tmux/
