@@ -44,3 +44,5 @@ fpath+=~/.zfunc
 
 # make sure compinit is called
 autoload -U compinit && compinit
+
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
