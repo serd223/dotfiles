@@ -18,7 +18,8 @@ export TERM=${TERM:-xterm-256color}
 # Aliases
 alias lg='lazygit'
 alias cls="clear"
-alias ls="ls -Alh --color=yes"
+# alias ls="ls -Alh --color=yes"
+alias ls="eza -Alh --colour=always --icons=always"
 alias wd="cd \$(walked $HOME/.config/walked/walked.toml)"
 alias rc="printf '\033[5 q'"
 alias hx="helix"
