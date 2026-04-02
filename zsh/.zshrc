@@ -95,6 +95,11 @@ autoload -U compinit && compinit
 # source zsh-autosuggestions
 source $__BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+_fix_cursor() {
+  printf '\033[5 q'
+}
+precmd_functions+=(_fix_cursor)
+
 # reset cursor to bar unless instructed otherwise
 if [[ "$RC_ON_LOGIN" != "no" ]]; then
   rc

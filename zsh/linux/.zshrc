@@ -44,5 +44,8 @@ fpath+=~/.zfunc
 
 # make sure compinit is called
 autoload -U compinit && compinit
-
+_fix_cursor() {
+  printf '\033[5 q'
+}
+precmd_functions+=(_fix_cursor)
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
