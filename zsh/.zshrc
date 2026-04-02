@@ -71,11 +71,11 @@ _watch() {
 alias watch="_watch"
 
 # Hack because my cursor gets stuck as a block shape after I exit helix
-_hx() {
-  $__BREW_PREFIX/bin/hx "$@"
-  printf '\033[5 q'
-}
-alias hx="_hx"
+# _hx() {
+#   $__BREW_PREFIX/bin/hx "$@"
+#   printf '\033[5 q'
+# }
+# alias hx="_hx"
 
 alias pydev="source ~/Programming/Python/dev/.venv/bin/activate"
 
