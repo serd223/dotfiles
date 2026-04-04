@@ -35,8 +35,10 @@ cp ./walked/walked.toml ~/.config/walked/
 mkdir -p ~/.config/kitty/
 mkdir -p ./bak/kitty/
 
+echo "shell /usr/bin/zsh" > ./kitty/kitty.conf.gen
+cat ./kitty/kitty.conf >> ./kitty/kitty.conf.gen
 cp ~/.config/kitty/kitty.conf ./bak/kitty/
-cp ./kitty/kitty.conf ~/.config/kitty/
+cp ./kitty/kitty.conf.gen ~/.config/kitty/kitty.conf
 # /kitty
 
 # tmux
