@@ -34,6 +34,30 @@ export CLI_COLOR=1
 # x:  Backgrounds -> None (Transparent/Default)
 export LSCOLORS="ExFxcxdxBxDxDxCxGxexex"
 
+# Modified from https://github.com/Discomanfulanito/pokefetch/
+if [ -f "$HOME/.poke_sprite" ]; then
+  poke_sprite=$(cat "$HOME/.poke_sprite")
+else
+  poke_sprite=$(pokeget shedinja --hide-name)
+  echo "$poke_sprite" > "$HOME/.poke_sprite"
+fi
+ff_lines=$(fastfetch --logo none | wc -l)
+sp_lines=$(echo "$poke_sprite" | wc -l)
+poke_sprite_pad_top=$(( (ff_lines - sp_lines) / 2 + 2 ))
+poke_sprite_pad_top=$(( poke_sprite_pad_top < 0 ? 0 : poke_sprite_pad_top ))
+poke_sprite_width=$(printf "%s\n" "$poke_sprite" | sed $'s/\e\\[[0-9;]*m//g' | awk '{ if (length > max) max = length } END { print max+0 }')
+poke_sprite_pad_left=$(( (38 - poke_sprite_width) / 2 ))
+poke_sprite_pad_left=$(( poke_sprite_pad_left < 0 ? 0 : poke_sprite_pad_left ))
+poke_sprite_pad_left=$(( poke_sprite_pad_left + 1 ))
+poke_sprite_pad_right=$(( (38 - poke_sprite_width + 1) / 2 ))
+poke_sprite_pad_right=$(( poke_sprite_pad_right < 0 ? 0 : poke_sprite_pad_right ))
+poke_sprite_pad_right=$(( poke_sprite_pad_right + 1 ))
+fetch() {
+  echo "$poke_sprite" | fastfetch --file-raw - \
+    --logo-padding-top "$poke_sprite_pad_top" \
+    --logo-padding-left "$poke_sprite_pad_left" \
+    --logo-padding-right "$poke_sprite_pad_right"
+}
 # Configure zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,bold"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
