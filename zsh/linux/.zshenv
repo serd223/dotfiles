@@ -6,7 +6,10 @@ export PATH="$HOME/bin/:$PATH"
 export PATH="/usr/local/go/bin/:$PATH"
 export GOPATH="$HOME/go/"
 export PATH="$GOPATH/bin/:$PATH"
+export PATH="$HOME/opt/flutter-sdk/flutter/bin:$PATH"
+export PATH="$HOME/opt/android_sdk/cmdline-tools/latest/bin:$PATH"
 export LC_RPATH="/usr/local/lib/"
+export ANDROID_HOME="$HOME/opt/android_sdk/"
 
 # Editor
 export EDITOR="hx"
