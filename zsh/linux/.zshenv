@@ -14,6 +14,7 @@ export ANDROID_HOME="$HOME/opt/android_sdk/"
 # Editor
 export EDITOR="hx"
 export KEYTIMEOUT=10
+export HELIX_RUNTIME="$HOME/opt/helix/runtime" # Compiled from source
 
 # Make sure TERM supports colors
 export TERM=${TERM:-xterm-256color}
@@ -25,4 +26,4 @@ alias cls="clear"
 alias ls="eza -Alh --colour=always --icons=always"
 alias wd="cd \$(walked $HOME/.config/walked/walked.toml)"
 alias rc="printf '\033[5 q'"
-alias hx="helix"
+# alias hx="helix"
