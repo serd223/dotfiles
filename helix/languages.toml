@@ -1,4 +1,19 @@
 [[language]]
+name = "rust"
+indent = { tab-width = 4, unit = "    " }
+
+[language.debugger]
+name = "lldb-dap"
+transport = "stdio"
+command = "lldb-dap"
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+completion = [ { name = "binary", completion = "filename" } ]
+args = { program = "{0}" }
+
+[[language]]
 name = "python"
 indent = { tab-width = 4, unit = "    " }
 language-servers = [
@@ -31,6 +46,17 @@ indent = { tab-width = 4, unit = "    " }
 [[language]]
 name = "c"
 indent = { tab-width = 4, unit = "    " }
+
+[language.debugger]
+name = "lldb-dap"
+transport = "stdio"
+command = "lldb-dap"
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+completion = [ { name = "binary", completion = "filename" } ]
+args = { program = "{0}" }
 
 [[language]]
 name = "cpp"
