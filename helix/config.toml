@@ -25,6 +25,9 @@ wrap-indicator = ""
 [editor.cursor-shape]
 insert = "bar"
 
+[editor.whitespace.render]
+tab = "all"
+
 [keys.normal]
 C-b = ":bc!"
 
