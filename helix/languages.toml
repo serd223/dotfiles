@@ -118,3 +118,20 @@ file-types = [
   { glob = ".yash_profile" },
   { glob = ".hushlogin" },
 ]
+
+[[language]]
+name = "c-sharp"
+indent = { tab-width = 4, unit = "    " }
+language-servers = [
+    # { name = "roslyn-language-server", except-features = ["diagnostics"] },
+    { name = "roslyn-language-server" },
+    # { name = "csharp-ls", only-features = ["diagnostics"] }
+    # { name = "csharp-ls"}
+]
+
+[language-server.roslyn-language-server]
+command = "roslyn-language-server"
+args = ["--stdio", "--autoLoadProjects"]
+
+[language-server.csharp-ls]
+command = "csharp-ls"
