@@ -39,9 +39,9 @@ t = [
   "paste_after"
 ]
 T = [
-  ":insert-output \"grep -r %sh{pwd} --exclude-dir=.git -e 'TODO' -Hn || echo 'No TODOs found'\"",
-  "delete_selection",
   ":n",
+  ":insert-output \"git grep TODO || echo 'No TODOs found'\"",
+  "delete_selection",
   "paste_after"
 ]
 
