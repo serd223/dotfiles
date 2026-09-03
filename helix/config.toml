@@ -44,6 +44,36 @@ T = [
   "delete_selection",
   "paste_after"
 ]
+m = [
+  ":o .clangd",
+  "select_all",
+  "delete_selection",
+  ":insert-output \"echo 'CompileFlags:'\"",
+  "open_below",
+  ":insert-output \"echo '    Add: ['\"",
+  "goto_line_end_newline",
+  ":insert-output \"printf 'inspect:\\n\\t@echo \\$(CFLAGS)\\n' | make -f Makefile -f - inspect | sed -E 's/[[:space:]]+/, /g'\"",
+  "goto_line_end_newline",
+  ":insert-output \"echo ]\"",
+  ":w",
+  ":bc",
+  "normal_mode"
+]
+M = [
+  ":o .clangd",
+  "select_all",
+  "delete_selection",
+  ":insert-output \"echo 'CompileFlags:'\"",
+  "open_below",
+  ":insert-output \"echo '    Add: ['\"",
+  "goto_line_end_newline",
+  ":insert-output \"printf 'inspect:\\n\\t@echo \\$(CPPFLAGS)\\n' | make -f Makefile -f - inspect | sed -E 's/[[:space:]]+/, /g'\"",
+  "goto_line_end_newline",
+  ":insert-output \"echo ]\"",
+  ":w",
+  ":bc",
+  "normal_mode"
+]
 
 [keys.insert]
 C-t = "@<esc>bc<S-lt><space><esc>h<S-R>li<S-gt><ret><S-lt>/<space><esc>h<S-R>li<S-gt><esc>kglli<ret>"
