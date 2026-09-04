@@ -40,7 +40,7 @@ t = [
 ]
 T = [
   ":n",
-  ":insert-output \"git grep TODO || echo 'No TODOs found'\"",
+  ":insert-output \"git grep -n TODO || echo 'No TODOs found'\"",
   "delete_selection",
   "paste_after"
 ]
