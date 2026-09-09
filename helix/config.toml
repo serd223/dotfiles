@@ -33,7 +33,7 @@ C-b = ":bc!"
 
 [keys.normal.space]
 l = [
-  ":sh echo \"%{buffer_name}:%{selection_line_start}-%{selection_line_end}\" | tmux load-buffer -",
+  ":sh tmux set-buffer -- \"%{buffer_name}:%{selection_line_start}-%{selection_line_end}\"",
 ]
 t = [
   ":insert-output \"grep %{buffer_name} -e 'TODO' -Hn || echo 'No TODOs found'\"",
