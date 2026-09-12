@@ -78,6 +78,14 @@ alias watch="_watch"
 # alias hx="_hx"
 
 alias pydev="source ~/Programming/Python/dev/.venv/bin/activate"
+f() {
+  export SPF_LAST_DIR="$(spf path-list --ld)"
+  TERM=xterm-kitty spf "$@"
+  [ ! -f "$SPF_LAST_DIR" ] || {
+    . "$SPF_LAST_DIR"
+    rm -f -- "$SPF_LAST_DIR" > /dev/null
+  }
+}
 
 # Configure zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,bold"
