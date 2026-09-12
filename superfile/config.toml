@@ -36,7 +36,7 @@ default_open_file_preview = true
 #-- Image Preview
 # Should we open an image preview by default whenever selection-hovering over an
 # image?
-show_image_preview = true
+show_image_preview = false
 
 #-- File Info Footer
 # Should we display a footer in the file panel that provides more file information?
