@@ -53,3 +53,14 @@ mkdir -p ./bak/fastfetch/
 cp ~/.config/fastfetch/config.jsonc ./bak/fastfetch/
 cp ./fastfetch/config.jsonc ~/.config/fastfetch/
 # /fastfetch
+
+# superfile
+mkdir -p "$HOME/Library/Application Support/superfile"
+mkdir -p "$HOME/Library/Application Support/superfile/theme"
+mkdir -p ./bak/superfile
+
+cp "$HOME/Library/Application Support/superfile/config.toml" ./bak/superfile
+cp ./superfile/config.toml "$HOME/Library/Application Support/superfile/"
+
+cp ./superfile/theme/onedark-serd.toml "$HOME/Library/Application Support/superfile/theme"
+# /superfile
