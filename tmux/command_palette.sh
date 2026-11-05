@@ -19,6 +19,10 @@ case "$1" in
         tmux display-popup -E -w 100% -h 100% -d "$tmux_current_path" \
             "lazygit"
         ;;
+    py)
+        tmux display-popup -E -w 90% -h 90% -d "$tmux_current_path" \
+            "uv run --with numpy --with scipy --with matplotlib python3"
+        ;;
     *)
         echo "Unknown command: $1"
         exit 1
