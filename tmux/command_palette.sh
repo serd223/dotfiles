@@ -5,7 +5,7 @@ tmux_current_path=$(tmux display-message -p '#{pane_current_path}')
 case "$1" in
     # NOTE: must not forget to add available commands to this space-seperated list
     --commands)
-        printf "scratch reload claude git py"
+        printf "scratch reload claude git py haskell jupyter"
         ;;
     scratch)
         tmux display-popup -E -w 90% -h 90% \
@@ -24,7 +24,15 @@ case "$1" in
         ;;
     py)
         tmux display-popup -E -w 90% -h 90% -d "$tmux_current_path" \
-            "uv run --with numpy --with scipy --with matplotlib python3"
+            "tmux new-session -A -s python-prompt -c \"$tmux_current_path\" uv run --with numpy --with scipy --with matplotlib python3"
+        ;;
+    jupyter)
+        tmux display-popup -E -w 90% -h 90% -d "$tmux_current_path" \
+            "tmux new-session -A -s jupyter -c \"$tmux_current_path\" uv run --with scipy --with numpy --with matplotlib --with jupyter jupyter notebook"
+        ;;
+    haskell)
+        tmux display-popup -E -w 90% -h 90% -d "$tmux_current_path" \
+            "tmux new-session -A -s haskell-prompt -c \"$tmux_current_path\" ghci"
         ;;
     *)
         echo "Unknown command: $1"
