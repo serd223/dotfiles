@@ -2,8 +2,11 @@
 
 tmux_current_path=$(tmux display-message -p '#{pane_current_path}')
 
-# NOTE: TODO: Must not forget to also add commands to palette list in .tmux.conf !
 case "$1" in
+    # NOTE: must not forget to add available commands to this space-seperated list
+    --commands)
+        printf "scratch reload claude git py"
+        ;;
     scratch)
         tmux display-popup -E -w 90% -h 90% \
             'touch /tmp/scratch.harper && hx /tmp/scratch.harper && rm /tmp/scratch.harper'
