@@ -5,7 +5,7 @@ tmux_current_path=$(tmux display-message -p '#{pane_current_path}')
 case "$1" in
     # NOTE: must not forget to add available commands to this space-seperated list
     --commands)
-        printf "scratch reload claude git py haskell jupyter"
+        printf "scratch reload claude antigravity opencode git py haskell jupyter"
         ;;
     scratch)
         tmux display-popup -E -w 90% -h 90% \
@@ -17,6 +17,14 @@ case "$1" in
     claude)
         tmux display-popup -E -w 100% -h 100% -d "$tmux_current_path" \
             "tmux new-session -A -s claude -c \"$tmux_current_path\" claude"
+        ;;
+    antigravity)
+        tmux display-popup -E -w 100% -h 100% -d "$tmux_current_path" \
+            "tmux new-session -A -s antigravity -c \"$tmux_current_path\" agy"
+        ;;
+    opencode)
+        tmux display-popup -E -w 100% -h 100% -d "$tmux_current_path" \
+            "tmux new-session -A -s opencode -c \"$tmux_current_path\" opencode"
         ;;
     git)
         tmux display-popup -E -w 100% -h 100% -d "$tmux_current_path" \
